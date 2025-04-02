@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="target"></div>
+<script>
+
+    let yearStr = prompt('Insert a year and see if it is a gap year:');
+    const year = parseInt(yearStr);
+
+    if (year % 4 === 1) {
+        document.querySelector('#target').innerHTML = year + ' is not a gap year.';
+    }
+    else {
+        document.querySelector('#target').innerHTML = year + ' is a gap year.';
+    }
+
+
+
+</script>
+
+</body>
+</html>
