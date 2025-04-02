@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Sum</title>
+</head>
+<body>
+    <script>
+        let rolls = prompt("Enter the number of dice rolls:");
+        let sum = 0;
+
+        for (let i = 0; i < rolls; i++) {
+            sum += Math.floor(Math.random() * 6) + 1; // Rolls a 6-sided die
+        }
+
+        document.write("The sum of " + rolls + " dice rolls are: " + sum);
+    </script>
+</body>
+</html>
