@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ol id="target"></ol>
+    <script>
+
+        let participants = [];
+
+        const people = parseInt(prompt('Syötä tähän ihmisten määrä: '))
+
+        for (let i = 0; i < people; i++) {
+            let person = prompt(`Syötä tähän ihminen numero ${i + 1} nimi: `)
+            participants.push(person);
+
+        }
+
+        console.log('Syötetyt ihmiset listassa: ');
+        participants.sort();
+        console.log(participants);
+
+    </script>
+</body>
+</html>
