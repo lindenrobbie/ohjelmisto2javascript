@@ -7,18 +7,19 @@
 <body>
     <ul id="target"></ul>
     <script>
-        let year1 = parseInt(prompt('Enter the first year:'));
-        let year2 = parseInt(prompt('Enter the second year:'));
-        let ul = document.getElementById('target');
-        let leapYears = '';
 
-        for (let year = year1; year <= year2; year++) {
-            if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-                leapYears += `<li>${year}</li>`;
-            }
+        let numbers = [];
+
+        for (let i = 0; i < 5; i++) {
+            let number = parseInt(prompt(`Syötä tähän luku ${i + 1}: `))
+            numbers.push(number);
+
         }
 
-        ul.innerHTML = leapYears;
+        console.log('SYÖTETYT (ei sorted) numerot päinvastoin järjestyksessä: ');
+        for (let i = numbers.length - 1; i >= 0; i--) {
+            console.log(numbers[i]);
+        }
     </script>
 </body>
 </html>
