@@ -18,9 +18,17 @@
 
         }
 
+        let listEntries = "";
+        let lista = document.getElementById("target");
+
         console.log('Syötetyt ihmiset listassa: ');
         participants.sort();
-        console.log(participants);
+        for (let i = 0; i < people; i++) {
+            listEntries += `<li>${participants[i]}</li>`;
+
+        }
+
+        lista.innerHTML = listEntries;
 
     </script>
 </body>
