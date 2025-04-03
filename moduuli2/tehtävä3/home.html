@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="dogs"></ul>
+<script>
+    let numberOfDogs = parseInt(prompt('Syötä tähän koirien määrä:'))
+
+    const dogs = [];
+
+    for (i = 0; i < numberOfDogs; i++) {
+        let dogName = prompt(`Syötä tähän koira ${i + 1}:n nimi:`)
+        dogs.push(dogName);
+    }
+
+    let dogEntry = '';
+
+    let lista = document.getElementById("dogs");
+
+    dogs.sort();
+    dogs.reverse();
+
+    for (let i = 0; i < numberOfDogs; i++) {
+        dogEntry += `<li>${dogs[i]}</li>`;
+    }
+
+
+    lista.innerHTML = dogEntry;
+
+</script>
+
+</body>
+</html>
