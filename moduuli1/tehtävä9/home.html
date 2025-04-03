@@ -5,20 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-    <ul id="target"></ul>
+    <div id="target"></div>
     <script>
-        let year1 = parseInt(prompt('Enter the first year:'));
-        let year2 = parseInt(prompt('Enter the second year:'));
-        let ul = document.getElementById('target');
-        let leapYears = '';
+        let num = parseInt(prompt('Enter an integer:'));
+        let isPrime = true;
 
-        for (let year = year1; year <= year2; year++) {
-            if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-                leapYears += `<li>${year}</li>`;
+        if (num <= 1) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    isPrime = false;
+                    break;
+                }
             }
         }
 
-        ul.innerHTML = leapYears;
+    let vastaus = isPrime ? `${num} on alkuluku.` : `${num} ei ole alkuluku.`
+    document.getElementById("target").innerText = vastaus;
+
     </script>
 </body>
 </html>
