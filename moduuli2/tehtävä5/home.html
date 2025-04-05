@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const numbers = [];
+
+    while (true) {
+        let userInput = prompt('Syötä tähän numero (valmiiksi syötetty numero pysäyttää numeron lisäyksen:');
+        let number = parseInt(userInput);
+
+        if (numbers.includes(number))  {
+            alert('Numero on jo syötetty, ohjelma lopettaa.')
+            break;
+        }
+
+    numbers.push(number);
+    }
+
+    numbers.sort((a, b) => b -a);
+
+    console.log(numbers);
+
+
+</script>
+
+</body>
+</html>
