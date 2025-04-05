@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="names"></p>
+
+<script>
+
+let nameList = [];
+let inputNames;
+
+while(true) {
+  inputNames = prompt('Syötä tähän nimi (tai jätä tyhjäks että ohjelma tulostaa):' );
+
+  if (inputNames === "") {
+    break;
+  }
+
+  nameList.push(inputNames.trim());
+
+}
+
+nameList.push(name);
+
+function concat(nameList) {
+  let result = "";
+  for (let i = 0; i < nameList.length; i++) {
+    result += nameList[i];
+  }
+  return result;
+}
+
+const list = document.getElementById("names");
+
+let result = concat(nameList);
+
+list.textContent = result;
+
+</script>
+
+</body>
+</html>
