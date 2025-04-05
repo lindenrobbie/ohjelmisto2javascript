@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="dices"></ul>
+
+<script>
+
+const sides = prompt('Syötä tähän nopan sivujen määrä: ');
+
+sidesInt = parseInt(sides)
+
+
+
+function rollDice(sidesInt) {
+    return Math.floor(Math.random() * sidesInt) + 1;
+}
+
+const list = document.getElementById("dices");
+
+let result;
+
+do {
+    result = rollDice(sidesInt);
+    const listItem = document.createElement("li");
+    listItem.textContent = result;
+    list.appendChild(listItem);
+} while (result !== sidesInt);
+
+</script>
+
+</body>
+</html>
