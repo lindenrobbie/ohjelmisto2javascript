@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="dogs"></ul>
+<script>
+
+    const numbers = [];
+
+    while (true) {
+        let userInput = prompt('Syötä tähän numero (0 lopettaa):');
+        let number = parseInt(userInput);
+
+        if (number === 0) {
+            break;
+        }
+
+    numbers.push(number);
+    }
+
+    numbers.sort((a, b) => b -a);
+
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+    }
+
+</script>
+
+</body>
+</html>
