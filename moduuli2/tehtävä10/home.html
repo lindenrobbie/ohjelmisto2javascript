@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+let candidates = [];
+
+let numberOfCandidates = prompt('Syötä tähän ehdokkaiden määrä: ');
+let intNumberOfCandidates = parseInt(numberOfCandidates);
+
+for (let i = 0; i < intNumberOfCandidates; i++) {
+  let candidateName = prompt('Syötä tähän ehdokkaan ' + (i + 1) + ' nimi:');
+  candidates.push({ name: candidateName, votes: 0 });
+}
+
+let numberOfVoters = prompt('Syötä äänestäjien määrä: ');
+let intNumberOfVoters = parseInt(numberOfVoters);
+
+for (let i = 0; i < intNumberOfVoters; i++) {
+    let vote = prompt('Äänestäjän ' + (i + 1) + ' ääni (ehdokkaan nimi):');
+
+    if (vote !== '') {
+        let found = false;
+        for (let j = 0; j < candidates.length; j++) {
+            if (candidates[j].name === vote) {
+                candidates[j].votes++;
+                found = true;
+                break;
+            }
+        }
+    }
+}
+
+candidates.sort((a, b) => {
+    return b.votes - a.votes;
+});
+
+console.log('Voittaja on ' + candidates[0].name + '('candidates[0].votes + ' äänellä.)');
+console.log('Tulokset:');
+for (let i = 0; i < candidates.length; i++) {
+    console.log(candidates[i].name + ': ' + candidates[i].votes + ' ääntä');
+}
+
+</script>
+
+</body>
+</html>
