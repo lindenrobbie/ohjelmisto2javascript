@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="pylly">
+    <input id="query" name="q" type="text">
+    <input type="submit" value="Search TV ting">
+</form>
+
+<div id="results"></div>
+
+<script>
+    document.getElementById('pylly').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let query = document.getElementById('query').value;
+        let url = "https://api.tvmaze.com/search/shows?q=" + query;
+        let resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        fetch(url).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            for (let i = 0; i < data.length; i++) {
+                let show = data[i].show;
+                let article = document.createElement('article');
+
+                let name = document.createElement('h2');
+                name.textContent = show.name;
+                article.appendChild(name);
+
+                let link = document.createElement('a');
+                link.href = show.url;
+                link.target = "_blank";
+                link.textContent = "Show Details";
+                article.appendChild(link);
+
+                if (show.image && show.image.medium) {
+                    let image = document.createElement('img');
+                    image.src = show.image.medium;
+                    image.alt = show.name;
+                    article.appendChild(image);
+                }
+
+                let summaryDiv = document.createElement('div');
+                summaryDiv.innerHTML = show.summary;
+                article.appendChild(summaryDiv);
+
+                resultsDiv.appendChild(article);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
